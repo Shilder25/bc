@@ -2,6 +2,12 @@
 
 A modern, cyberpunk-themed cryptocurrency trading dashboard built with React, TypeScript, and Express.js.
 
+## 🔧 Latest Updates
+- Fixed CORS issues for Vercel deployment
+- Removed ASTER/USD from dashboard
+- Updated PUMP/USD price to current value
+- Fixed server configuration for production
+
 ## ✨ Features
 
 - **Real-time Crypto Prices**: Live data for BTC, ETH, SOL, and PUMP tokens
