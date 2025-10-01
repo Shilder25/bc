@@ -13,6 +13,7 @@ const FEAR_GREED_URL = 'https://api.alternative.me/fng/';
 interface ChartCache {
   data: any[];
   timestamp: number;
+  source?: string;
 }
 
 const chartCache = new Map<string, ChartCache>();
@@ -478,7 +479,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
         '1M': '365'
       };
       
-      const days = timeframeToDays[timeframe] || '1';
+      const days = timeframeToDays[timeframe as keyof typeof timeframeToDays] || '1';
       
       const response = await fetch(
         `${COINGECKO_BASE_URL}/coins/${coinId}/market_chart?vs_currency=usd&days=${days}&interval=${days === '1' ? 'minutely' : 'hourly'}`
