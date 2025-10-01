@@ -27,6 +27,7 @@
     }
   ],
   "env": {
-    "NODE_ENV": "production"
+    "NODE_ENV": "production",
+    "CRYPTOCOMPARE_API_KEY": "your-api-key-here"
   }
 }
