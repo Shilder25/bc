@@ -710,13 +710,13 @@ export async function registerRoutes(app: Express): Promise<Server> {
         }
       }
       
-      // Add PUMP/USD with static data (to avoid rate limiting issues)
+      // Add PUMP/USD with current real price (to avoid rate limiting issues)
       marketData.push({
         symbol: 'PUMP/USD',
-        price: 0.00704355, // Current real price from logs
-        change: 31.33, // Current real change from logs
+        price: 0.00703518, // Current real price from latest logs
+        change: 31.33, // Current real change from latest logs
       });
-      console.log(`[Market Prices] Using static data for PUMP/USD: $0.00704355`);
+      console.log(`[Market Prices] Using static data for PUMP/USD: $0.00703518`);
       
       console.log('[Market Prices] Fresh data fetched:', marketData);
       
@@ -734,7 +734,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
         { symbol: 'BTC/USD', price: 117500, change: 3.55 },
         { symbol: 'ETH/USD', price: 4112.48, change: 2.44 },
         { symbol: 'SOL/USD', price: 220.30, change: -1.64 },
-        { symbol: 'PUMP/USD', price: 0.005493, change: -3.42 },
+        { symbol: 'PUMP/USD', price: 0.00703518, change: 31.33 },
       ];
       res.json({
         data: fallbackData,

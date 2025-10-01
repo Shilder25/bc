@@ -269,8 +269,7 @@ export async function getMarketPrices(): Promise<MarketTicker[]> {
           price: solPrice.status === 'fulfilled' ? solPrice.value.current_price : 219.68, 
           change: solPrice.status === 'fulfilled' ? solPrice.value.price_change_percentage_24h : -1.64 
         },
-        { symbol: 'PUMP/USD', price: 0.005493, change: -3.42 },
-        { symbol: 'ASTER/USD', price: 1.91, change: 8.06 },
+        { symbol: 'PUMP/USD', price: 0.00703518, change: 31.33 },
       ];
     } catch (fallbackError) {
       console.error('Fallback price fetch failed:', fallbackError);
@@ -279,8 +278,7 @@ export async function getMarketPrices(): Promise<MarketTicker[]> {
         { symbol: 'BTC/USD', price: 114082, change: 3.55 },
         { symbol: 'ETH/USD', price: 4112.48, change: 2.44 },
         { symbol: 'SOL/USD', price: 219.68, change: -1.64 }, // Updated to realistic price
-        { symbol: 'PUMP/USD', price: 0.005493, change: -3.42 },
-        { symbol: 'ASTER/USD', price: 1.91, change: 8.06 },
+        { symbol: 'PUMP/USD', price: 0.00703518, change: 31.33 },
       ];
     }
   }
