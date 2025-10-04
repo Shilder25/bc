@@ -75,17 +75,11 @@ app.use((req, res, next) => {
   // this serves both the API and the client.
   // It is the only port that is not firewalled.
   const port = parseInt(process.env.PORT || '5000', 10);
-  
-  // For Vercel deployment, don't specify host
-  if (process.env.NODE_ENV === 'production') {
-    server.listen(port, () => {
-      log(`serving on port ${port}`);
-    });
-  } else {
-    server.listen(port, "localhost", () => {
-      log(`serving on port ${port}`);
-    });
-  }
+
+  // Listen on all interfaces (0.0.0.0) to accept external connections
+  server.listen(port, '0.0.0.0', () => {
+    log(`serving on port ${port}`);
+  });
 })();
 
 // Export the app for Vercel
